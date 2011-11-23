@@ -20,7 +20,6 @@ class Mutt < Formula
 
   def patches
     urls = [
-      ['--sidebar-patch', 'https://raw.github.com/nedos/mutt-sidebar-patch/master/mutt-sidebar.patch'],
       ['--trash-patch', 'https://gist.github.com/raw/1361946/632541cf9ae54e3d1caed5c748149962f8972c28/mutt-trash-folder.patch'],
       ['--mailbox-alias-patch', 'https://gist.github.com/raw/1361945/498a4b8715a5c4508f62f110ced6447045ce9a6c/mutt_mbox_alias.patch'],
     ]
