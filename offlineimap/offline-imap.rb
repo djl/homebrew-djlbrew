@@ -1,8 +1,8 @@
 require 'formula'
 
 class OfflineImap < Formula
-  url "https://github.com/spaetz/offlineimap.git", :tag => 'v6.5.0'
-  version '6.5.0'
+  url "https://github.com/spaetz/offlineimap.git", :tag => 'v6.5.1'
+  version '6.5.1'
   homepage "http://offlineimap.org/"
 
   def install
