@@ -11,7 +11,6 @@ class Mutt < Formula
   def options
     [
       ['--enable-debug', "Build with debug option enabled"],
-      ['--sidebar-patch', "Apply sidebar (folder list) patch"],
       ['--trash-patch', "Apply trash folder patch"],
       ['--mailbox-alias-patch', "Apply mailbox alias patch"],
       ['--with-slang', "Build against slang instead of ncurses"],
