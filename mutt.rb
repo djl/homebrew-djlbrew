@@ -8,12 +8,6 @@ class Mutt < Formula
   depends_on 'tokyo-cabinet'
   depends_on 'slang'
 
-  def options
-    [
-      ['--enable-debug', "Build with debug option enabled"],
-    ]
-  end
-
   def patches
     # I only care about the trash patch
     ['https://gist.github.com/raw/1361946/632541cf9ae54e3d1caed5c748149962f8972c28/mutt-trash-folder.patch']
