@@ -9,8 +9,10 @@ class Mutt < Formula
   depends_on 'slang'
 
   def patches
-    # I only care about the trash patch
-    ['https://gist.github.com/raw/1361946/632541cf9ae54e3d1caed5c748149962f8972c28/mutt-trash-folder.patch']
+    [
+     'http://patch-tracker.debian.org/patch/series/dl/mutt/1.5.21-6.2/features/trash-folder',
+     'http://patch-tracker.debian.org/patch/series/dl/mutt/1.5.21-6.2/features/purge-message',
+    ]
   end
 
   def install
