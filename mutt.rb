@@ -6,7 +6,7 @@ class Mutt < Formula
   md5 'a29db8f1d51e2f10c070bf88e8a553fd'
 
   depends_on 'tokyo-cabinet'
-  depends_on 'slang'
+  depends_on 'slang' if ARGV.include? '--with-slang'
 
   def patches
     [
@@ -33,8 +33,15 @@ class Mutt < Formula
             # This is just a trick to keep 'make install' from trying to chgrp
             # the mutt_dotlock file (which we can't do if we're running as an
             # unpriviledged user)
-            "--with-homespool=.mbox",
-            "--with-slang"]
+            "--with-homespool=.mbox"]
+    args << "--with-slang" if ARGV.include? '--with-slang'
+
+    if ARGV.include? '--enable-debug'
+      args << "--enable-debug"
+    else
+      args << "--disable-debug"
+    end
+
     system "./configure", *args
     system "make install"
   end
