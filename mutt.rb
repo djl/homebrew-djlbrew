@@ -13,6 +13,7 @@ class Mutt < Formula
      'http://patch-tracker.debian.org/patch/series/dl/mutt/1.5.21-6.2/features/trash-folder',
      'http://patch-tracker.debian.org/patch/series/dl/mutt/1.5.21-6.2/features/purge-message',
      'http://patch-tracker.debian.org/patch/series/dl/mutt/1.5.21-6.2/features/imap_fast_trash',
+     'https://raw.github.com/gist/3982448/56c7cbafe3759c737bf8d9c55d5b9e7bdfb48628/mutt-short-mailbox.patch',
     ]
   end
 
