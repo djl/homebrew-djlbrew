@@ -6,15 +6,25 @@ class Mutt < Formula
   md5 'a29db8f1d51e2f10c070bf88e8a553fd'
 
   depends_on 'tokyo-cabinet'
-  depends_on 'slang' if ARGV.include? '--with-slang'
+  depends_on 'slang' if build.include? 'with-slang'
+
+  option 'with-slang', 'Build against slang instead of ncurses'
+  option 'trash-patch', 'Apply trash folder patch'
+  option 'purge-message-patch', 'Apply the purge message patch'
+  option 'imap-fast-trash-patch', 'Apply the IMAP fast trash patch'
+  option 'short-mailbox-patch', 'Apply the short mailbox name patch'
 
   def patches
-    p = [
-      'http://patch-tracker.debian.org/patch/series/dl/mutt/1.5.21-6.2/features/trash-folder',
-      'http://patch-tracker.debian.org/patch/series/dl/mutt/1.5.21-6.2/features/purge-message',
-    ]
-    p << 'http://patch-tracker.debian.org/patch/series/dl/mutt/1.5.21-6.2/features/imap_fast_trash' if ARGV.include? '--fast-trash-patch'
-    p << 'https://raw.github.com/gist/3982448/56c7cbafe3759c737bf8d9c55d5b9e7bdfb48628/mutt-short-mailbox.patch' if ARGV.include? '--short-mailbox-patch'
+    urls = {
+      'imap-fast-trash-patch' => 'http://patch-tracker.debian.org/patch/series/dl/mutt/1.5.21-6.2/features/imap_fast_trash',
+      'purge-message-patch' => 'http://patch-tracker.debian.org/patch/series/dl/mutt/1.5.21-6.2/features/purge-message',
+      'short-mailbox-patch' => 'https://raw.github.com/gist/3982448/56c7cbafe3759c737bf8d9c55d5b9e7bdfb48628/mutt-short-mailbox.patch',
+      'trash-patch' => 'http://patch-tracker.debian.org/patch/series/dl/mutt/1.5.21-6.2/features/trash-folder',
+    }
+    p = []
+    urls.each do |b|
+      p << urls[b[0]] if build.include? b[0]
+    end
     p
   end
 
@@ -36,9 +46,9 @@ class Mutt < Formula
             # the mutt_dotlock file (which we can't do if we're running as an
             # unpriviledged user)
             "--with-homespool=.mbox"]
-    args << "--with-slang" if ARGV.include? '--with-slang'
+    args << "--with-slang" if build.include? 'with-slang'
 
-    if ARGV.include? '--enable-debug'
+    if build.include? 'enable-debug'
       args << "--enable-debug"
     else
       args << "--disable-debug"
