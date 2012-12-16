@@ -27,7 +27,6 @@ class Mutt < Formula
   def install
     args = ["--disable-dependency-tracking",
             "--disable-warnings",
-            "--disable-debug",
             "--prefix=#{prefix}",
             "--with-ssl",
             "--with-sasl",
