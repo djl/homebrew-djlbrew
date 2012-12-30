@@ -21,7 +21,11 @@ class Mutt < Formula
       'short-mailbox-patch' => 'https://raw.github.com/gist/3982448/56c7cbafe3759c737bf8d9c55d5b9e7bdfb48628/mutt-short-mailbox.patch',
       'trash-patch' => 'http://patch-tracker.debian.org/patch/series/dl/mutt/1.5.21-6.2/features/trash-folder',
     }
-    urls.keys.map { |u| urls[u] if build.include? u }
+    p = []
+    urls.each do |k, v|
+      p << v if build.include? k
+    end
+    return p
   end
 
   def install
