@@ -10,7 +10,7 @@ class Mutt < Formula
 
   option 'with-slang', 'Build against slang instead of ncurses'
   option 'trash-patch', 'Apply trash folder patch'
-  option 'purge-message-patch', 'Apply the purge message patch'
+  option 'purge-message-patch', 'Apply the purge message patch (requires trash patch)'
   option 'imap-fast-trash-patch', 'Apply the IMAP fast trash patch'
   option 'short-mailbox-patch', 'Apply the short mailbox name patch'
 
