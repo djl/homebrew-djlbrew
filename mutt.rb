@@ -13,6 +13,8 @@ class Mutt < Formula
   option 'purge-message-patch', 'Apply the purge message patch (requires trash patch)'
   option 'imap-fast-trash-patch', 'Apply the IMAP fast trash patch'
   option 'short-mailbox-patch', 'Apply the short mailbox name patch'
+  option 'ifdef-patch', 'Apply the ifdef patch'
+  option 'browser-position-patch', 'Apply the "sensible browser position" patch'
 
   def patches
     urls = {
@@ -20,6 +22,8 @@ class Mutt < Formula
       'purge-message-patch' => 'http://patch-tracker.debian.org/patch/series/dl/mutt/1.5.21-6.2/features/purge-message',
       'short-mailbox-patch' => 'https://raw.github.com/gist/3982448/56c7cbafe3759c737bf8d9c55d5b9e7bdfb48628/mutt-short-mailbox.patch',
       'trash-patch' => 'http://patch-tracker.debian.org/patch/series/dl/mutt/1.5.21-6.2/features/trash-folder',
+      'ifdef-patch' => 'http://patch-tracker.debian.org/patch/series/dl/mutt/1.5.21-6.2/features/ifdef',
+      'browser-position-patch' => 'http://patch-tracker.debian.org/patch/series/dl/mutt/1.5.21-6.2/features/sensible_browser_position',
     }
     p = []
     urls.each do |k, v|
