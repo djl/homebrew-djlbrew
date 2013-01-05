@@ -15,6 +15,7 @@ class Mutt < Formula
   option 'short-mailbox-patch', 'Apply the short mailbox name patch'
   option 'ifdef-patch', 'Apply the ifdef patch'
   option 'browser-position-patch', 'Apply the "sensible browser position" patch'
+  option 'sourcex-patch', 'Apply the sourcex patch'
 
   def patches
     urls = {
@@ -24,6 +25,7 @@ class Mutt < Formula
       'trash-patch' => 'http://patch-tracker.debian.org/patch/series/dl/mutt/1.5.21-6.2/features/trash-folder',
       'ifdef-patch' => 'http://patch-tracker.debian.org/patch/series/dl/mutt/1.5.21-6.2/features/ifdef',
       'browser-position-patch' => 'http://patch-tracker.debian.org/patch/series/dl/mutt/1.5.21-6.2/features/sensible_browser_position',
+      'sourcex-patch' => 'https://gist.github.com/raw/4461393/048c58486f516aff0c3b622c9302e9bc3b8c9222/mutt-sourcex.diff',
     }
     p = []
     urls.each do |k, v|
