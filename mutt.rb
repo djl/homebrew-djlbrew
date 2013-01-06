@@ -8,24 +8,24 @@ class Mutt < Formula
   depends_on 'tokyo-cabinet'
   depends_on 'slang' if build.include? 'with-slang'
 
-  option 'with-slang', 'Build against slang instead of ncurses'
-  option 'trash-patch', 'Apply trash folder patch'
-  option 'purge-message-patch', 'Apply the purge message patch (requires trash patch)'
   option 'imap-fast-trash-patch', 'Apply the IMAP fast trash patch'
-  option 'short-mailbox-patch', 'Apply the short mailbox name patch'
-  option 'ifdef-patch', 'Apply the ifdef patch'
-  option 'browser-position-patch', 'Apply the "sensible browser position" patch'
+  option 'mailboxrx-patch', 'Apply the mailboxrx patch'
+  option 'purge-message-patch', 'Apply the purge message patch (requires trash patch)'
   option 'quiet-source-patch', 'Apply the quiet source patch'
+  option 'short-mailbox-patch', 'Apply the short mailbox name patch'
+  option 'sourcex-patch', 'Apply the sourcex patch'
+  option 'trash-patch', 'Apply trash folder patch'
+  option 'with-slang', 'Build against slang instead of ncurses'
 
   def patches
     urls = {
-      'imap-fast-trash-patch' => 'http://patch-tracker.debian.org/patch/series/dl/mutt/1.5.21-6.2/features/imap_fast_trash',
-      'purge-message-patch' => 'http://patch-tracker.debian.org/patch/series/dl/mutt/1.5.21-6.2/features/purge-message',
-      'short-mailbox-patch' => 'https://raw.github.com/gist/3982448/56c7cbafe3759c737bf8d9c55d5b9e7bdfb48628/mutt-short-mailbox.patch',
-      'trash-patch' => 'http://patch-tracker.debian.org/patch/series/dl/mutt/1.5.21-6.2/features/trash-folder',
-      'ifdef-patch' => 'http://patch-tracker.debian.org/patch/series/dl/mutt/1.5.21-6.2/features/ifdef',
-      'browser-position-patch' => 'http://patch-tracker.debian.org/patch/series/dl/mutt/1.5.21-6.2/features/sensible_browser_position',
-      'quiet-source-patch' => 'https://gist.github.com/raw/4462146/879a577cb4fbc15fc1ff8f6d4f71561fefe1d7d5/quiet-source.diff',
+      'imap-fast-trash-patch' => 'https://raw.github.com/djl/mutt-patches/master/imap-fast-trash.diff',
+      'mailboxrx-patch' => 'https://raw.github.com/djl/mutt-patches/master/mailboxrx.diff',
+      'purge-message-patch' => 'https://raw.github.com/djl/mutt-patches/master/purge-message.diff',
+      'quiet-source-patch' => 'https://raw.github.com/djl/mutt-patches/master/quiet-source.diff',
+      'short-mailbox-patch' => 'https://raw.github.com/djl/mutt-patches/master/short-mailbox.diff',
+      'sourcex-patch' => 'https://raw.github.com/djl/mutt-patches/master/sourcex.diff',
+      'trash-patch' => 'https://raw.github.com/djl/mutt-patches/master/trash-folder.diff',
     }
     p = []
     urls.each do |k, v|
