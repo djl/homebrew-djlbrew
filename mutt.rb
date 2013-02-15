@@ -9,7 +9,6 @@ class Mutt < Formula
   depends_on 'slang' if build.include? 'with-slang'
 
   option 'imap-fast-trash-patch', 'Apply the IMAP fast trash patch'
-  option 'mailboxrx-patch', 'Apply the mailboxrx patch'
   option 'purge-message-patch', 'Apply the purge message patch (requires trash patch)'
   option 'quiet-source-patch', 'Apply the quiet source patch'
   option 'short-mailbox-patch', 'Apply the short mailbox name patch'
@@ -20,7 +19,6 @@ class Mutt < Formula
   def patches
     urls = {
       'imap-fast-trash-patch' => 'https://raw.github.com/djl/mutt-patches/master/imap-fast-trash.diff',
-      'mailboxrx-patch' => 'https://raw.github.com/djl/mutt-patches/master/mailboxrx.diff',
       'purge-message-patch' => 'https://raw.github.com/djl/mutt-patches/master/purge-message.diff',
       'quiet-source-patch' => 'https://raw.github.com/djl/mutt-patches/master/quiet-source.diff',
       'short-mailbox-patch' => 'https://raw.github.com/djl/mutt-patches/master/short-mailbox.diff',
