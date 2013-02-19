@@ -10,9 +10,7 @@ class Mutt < Formula
 
   option 'imap-fast-trash-patch', 'Apply the IMAP fast trash patch'
   option 'purge-message-patch', 'Apply the purge message patch (requires trash patch)'
-  option 'quiet-source-patch', 'Apply the quiet source patch'
   option 'short-mailbox-patch', 'Apply the short mailbox name patch'
-  option 'sourcex-patch', 'Apply the sourcex patch'
   option 'trash-patch', 'Apply trash folder patch'
   option 'with-slang', 'Build against slang instead of ncurses'
 
@@ -20,9 +18,7 @@ class Mutt < Formula
     urls = {
       'imap-fast-trash-patch' => 'https://raw.github.com/djl/mutt-patches/master/imap-fast-trash.diff',
       'purge-message-patch' => 'https://raw.github.com/djl/mutt-patches/master/purge-message.diff',
-      'quiet-source-patch' => 'https://raw.github.com/djl/mutt-patches/master/quiet-source.diff',
       'short-mailbox-patch' => 'https://raw.github.com/djl/mutt-patches/master/short-mailbox.diff',
-      'sourcex-patch' => 'https://raw.github.com/djl/mutt-patches/master/sourcex.diff',
       'trash-patch' => 'https://raw.github.com/djl/mutt-patches/master/trash-folder.diff',
     }
     p = []
