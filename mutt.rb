@@ -10,16 +10,16 @@ class Mutt < Formula
 
   option 'imap-fast-trash-patch', 'Apply the IMAP fast trash patch'
   option 'purge-message-patch', 'Apply the purge message patch (requires trash patch)'
-  option 'short-mailbox-patch', 'Apply the short mailbox name patch'
-  option 'trash-patch', 'Apply trash folder patch'
+  option 'sidebar-patch', 'Apply the sidebar patch'
+  option 'trash-patch', 'Apply the trash folder patch'
   option 'with-slang', 'Build against slang instead of ncurses'
 
   def patches
     urls = {
-      'imap-fast-trash-patch' => 'https://raw.github.com/djl/mutt-patches/master/imap-fast-trash.diff',
-      'purge-message-patch' => 'https://raw.github.com/djl/mutt-patches/master/purge-message.diff',
-      'short-mailbox-patch' => 'https://raw.github.com/djl/mutt-patches/master/short-mailbox.diff',
-      'trash-patch' => 'https://raw.github.com/djl/mutt-patches/master/trash-folder.diff',
+      'imap-fast-trash-patch' => 'http://patch-tracker.debian.org/patch/series/dl/mutt/1.5.21-6.2/features/imap_fast_trash',
+      'purge-message-patch' => 'http://patch-tracker.debian.org/patch/series/dl/mutt/1.5.21-6.2/features/purge-message',
+      'sidebar-patch' => 'http://lunar-linux.org/~tchan/mutt/patch-1.5.21.sidebar.20120829.txt',
+      'trash-patch' => 'http://patch-tracker.debian.org/patch/series/dl/mutt/1.5.21-6.2/features/trash-folder',
     }
     p = []
     urls.each do |k, v|
