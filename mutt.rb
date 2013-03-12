@@ -18,7 +18,7 @@ class Mutt < Formula
     urls = {
       'imap-fast-trash-patch' => 'http://patch-tracker.debian.org/patch/series/dl/mutt/1.5.21-6.2/features/imap_fast_trash',
       'purge-message-patch' => 'http://patch-tracker.debian.org/patch/series/dl/mutt/1.5.21-6.2/features/purge-message',
-      'short-mailbox-patch' => 'https://gist.github.com/djl/4995070/raw/a3d7f9ba57132030c3845186f7235d5b07900bc7/mutt-short-mailbox.diff',
+      'short-mailbox-patch' => 'https://raw.github.com/djl/mutt-patches/master/short-mailbox.diff',
       'trash-patch' => 'http://patch-tracker.debian.org/patch/series/dl/mutt/1.5.21-6.2/features/trash-folder',
     }
     p = []
