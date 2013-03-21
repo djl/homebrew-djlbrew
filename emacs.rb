@@ -10,9 +10,9 @@ class Emacs < Formula
   depends_on :automake
 
   def install
-     inreplace "src/nsterm.m",
-       "*col = [NSColor colorWithCalibratedRed: r green: g blue: b alpha: 1.0];",
-       "*col = [NSColor colorWithDeviceRed: r green: g blue: b alpha: 1.0];"
+    inreplace "src/nsterm.m",
+      "*col = [NSColor colorWithCalibratedRed: r green: g blue: b alpha: 1.0];",
+      "*col = [NSColor colorWithDeviceRed: r green: g blue: b alpha: 1.0];"
     system "./configure", "--with-ns"
     system "make bootstrap"
     system "make install"
