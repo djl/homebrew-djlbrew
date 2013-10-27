@@ -1,9 +1,9 @@
 require 'formula'
 
 class Mutt < Formula
-  url 'ftp://ftp.mutt.org/mutt/devel/mutt-1.5.21.tar.gz'
+  url 'ftp://ftp.mutt.org/mutt/devel/mutt-1.5.22.tar.gz'
   homepage 'http://www.mutt.org/'
-  sha1 'a8475f2618ce5d5d33bff85c0affdf21ab1d76b9'
+  sha1 '728a114cb3a44df373dbf1292fc34dd8321057dc'
 
   depends_on 'tokyo-cabinet'
   depends_on 'slang' if build.include? 'with-slang'
@@ -16,10 +16,10 @@ class Mutt < Formula
 
   def patches
     urls = {
-      'imap-fast-trash-patch' => 'http://patch-tracker.debian.org/patch/series/dl/mutt/1.5.21-6.2/features/imap_fast_trash',
-      'purge-message-patch' => 'http://patch-tracker.debian.org/patch/series/dl/mutt/1.5.21-6.2/features/purge-message',
+      'imap-fast-trash-patch' => 'http://patch-tracker.debian.org/patch/series/dl/mutt/1.5.21-6.2+deb7u1/features/imap_fast_trash',
+      'purge-message-patch' => 'http://patch-tracker.debian.org/patch/series/dl/mutt/1.5.21-6.2+deb7u1/features/purge-message',
       'short-mailbox-patch' => 'https://raw.github.com/djl/mutt-patches/master/short-mailbox.diff',
-      'trash-patch' => 'http://patch-tracker.debian.org/patch/series/dl/mutt/1.5.21-6.2/features/trash-folder',
+      'trash-patch' => 'http://patch-tracker.debian.org/patch/series/dl/mutt/1.5.21-6.2+deb7u1/features/trash-folder',
     }
     p = []
     urls.each do |k, v|
