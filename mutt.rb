@@ -5,7 +5,7 @@ class Mutt < Formula
   homepage 'http://www.mutt.org/'
   sha1 '728a114cb3a44df373dbf1292fc34dd8321057dc'
 
-  depends_on 'djl/djlbrew/gpgme'
+  depends_on 'gpgme'
   depends_on 'tokyo-cabinet'
   depends_on 'slang' if build.include? 'with-slang'
 
