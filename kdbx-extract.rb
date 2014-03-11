@@ -1,13 +1,13 @@
 require 'formula'
 
 class KdbxExtract < Formula
-  url 'https://s3.amazonaws.com/djl.homebrew/kdbx-extract-2.0-alpha5'
+  version '2014-03-11'
+  url "https://s3.amazonaws.com/djl.homebrew/kdbx-extract-#{version}"
   homepage 'https://github.com/djl/keepassx/tree/kdbx-extract-prompt'
-  version '2.0-alpha5'
-  sha1 '6f5c5628dcae57581eddbf9e18e6efa5aa35ce5f'
+  sha1 '9b9d131dd13a05e0c65838be7fa1a705132dcb10'
 
   def install
-    bin.install 'kdbx-extract-2.0-alpha5' => 'kdbx-extract'
+    bin.install "kdbx-extract-#{version}" => 'kdbx-extract'
   end
 
   def caveats; <<-EOS.undent
