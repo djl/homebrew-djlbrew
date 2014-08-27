@@ -10,24 +10,14 @@ class Mutt < Formula
   depends_on 'tokyo-cabinet'
   depends_on 'slang' if build.include? 'with-slang'
 
-  option 'imap-fast-trash-patch', 'Apply the IMAP fast trash patch'
-  option 'purge-message-patch', 'Apply the purge message patch (requires trash patch)'
-  option 'short-mailbox-patch', 'Apply the short mailbox patch'
-  option 'trash-patch', 'Apply the trash folder patch'
   option 'with-slang', 'Build against slang instead of ncurses'
 
   def patches
-    urls = {
-      'imap-fast-trash-patch' => 'https://raw.github.com/djl/mutt-patches/master/imap-fast-trash.diff',
-      'purge-message-patch' => 'https://raw.github.com/djl/mutt-patches/master/purge-message.diff',
-      'short-mailbox-patch' => 'https://raw.github.com/djl/mutt-patches/master/short-mailbox.diff',
-      'trash-patch' => 'https://raw.github.com/djl/mutt-patches/master/trash-folder.diff',
-    }
-    p = []
-    urls.each do |k, v|
-      p << v if build.include? k
-    end
-    return p
+    [
+     'https://raw.github.com/djl/mutt-patches/master/trash-folder.diff',
+     'https://raw.github.com/djl/mutt-patches/master/imap-fast-trash.diff',
+     'https://raw.github.com/djl/mutt-patches/master/purge-message.diff',
+    ]
   end
 
   def install
