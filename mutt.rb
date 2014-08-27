@@ -4,7 +4,7 @@ class Mutt < Formula
   url 'https://bitbucket.org/mutt/mutt/downloads/mutt-1.5.23.tar.gz'
   homepage 'http://www.mutt.org/'
   sha1 '8ac821d8b1e25504a31bf5fda9c08d93a4acc862'
-  revision 1
+  revision 1000
 
   depends_on 'gpgme'
   depends_on 'tokyo-cabinet'
