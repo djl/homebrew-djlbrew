@@ -9,7 +9,7 @@ class Openssh < Formula
   depends_on 'openssl'
 
   def patches
-    ['https://raw.githubusercontent.com/djl/openssh-patches/master/openssh-6.4p1-identitypersist.patch']
+    ['https://raw.githubusercontent.com/djl/patches/master/openssh/openssh-6.4p1-identitypersist.patch']
   end
 
   def install

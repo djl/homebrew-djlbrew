@@ -14,9 +14,9 @@ class Mutt < Formula
 
   def patches
     [
-     'https://raw.github.com/djl/mutt-patches/master/trash-folder.diff',
-     'https://raw.github.com/djl/mutt-patches/master/imap-fast-trash.diff',
-     'https://raw.github.com/djl/mutt-patches/master/purge-message.diff',
+     'https://raw.github.com/djl/patches/master/mutt/trash-folder.diff',
+     'https://raw.github.com/djl/patches/master/mutt/imap-fast-trash.diff',
+     'https://raw.github.com/djl/patches/master/mutt/purge-message.diff',
     ]
   end
 
