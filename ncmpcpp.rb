@@ -1,7 +1,7 @@
 class Ncmpcpp < Formula
   homepage "http://ncmpcpp.rybczak.net/"
-  url "http://ncmpcpp.rybczak.net/stable/ncmpcpp-0.6.3.tar.bz2"
-  sha1 "dbc121b766791eae0a1613f29131adcc36c39065"
+  url "http://ncmpcpp.rybczak.net/stable/ncmpcpp-0.6.4.tar.bz2"
+  sha1 "bdec81ac5317ce8b65914ef7a2ff4d0396c48fa5"
 
   head do
     url "git://repo.or.cz/ncmpcpp.git"
