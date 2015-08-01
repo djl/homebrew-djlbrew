@@ -6,17 +6,29 @@ class Mutt < Formula
   sha1 '8ac821d8b1e25504a31bf5fda9c08d93a4acc862'
   revision 1000
 
+  option 'with-slang', 'Build against slang instead of ncurses'
+
   depends_on 'gpgme'
   depends_on 'tokyo-cabinet'
   depends_on 'slang' if build.include? 'with-slang'
 
-  option 'with-slang', 'Build against slang instead of ncurses'
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
 
   def patches
     [
-     'https://raw.github.com/djl/patches/master/mutt/trash-folder.diff',
-     'https://raw.github.com/djl/patches/master/mutt/imap-fast-trash.diff',
-     'https://raw.github.com/djl/patches/master/mutt/purge-message.diff',
+      'https://raw.github.com/djl/patches/master/mutt/ifdef.patch',
+      'https://raw.github.com/djl/patches/master/mutt/trash-folder.patch',
+      'https://raw.github.com/djl/patches/master/mutt/purge-message.patch',
+      'https://raw.github.com/djl/patches/master/mutt/imap_fast_trash.patch',
+      'https://raw.github.com/djl/patches/master/mutt/sensible_browser_position.patch',
+      'https://raw.github.com/djl/patches/master/mutt/sidebar.patch',
+      'https://raw.github.com/djl/patches/master/mutt/sidebar-dotpathsep.patch',
+      'https://raw.github.com/djl/patches/master/mutt/sidebar-utf8.patch',
+      'https://raw.github.com/djl/patches/master/mutt/multiple-fcc.patch',
+      'https://raw.github.com/djl/patches/master/mutt/sidebar-newonly.patch',
+      'https://raw.github.com/djl/patches/master/mutt/sidebar-delimnullwide.patch',
+      'https://raw.github.com/djl/patches/master/mutt/sidebar-compose.patch',
     ]
   end
 
@@ -46,8 +58,8 @@ class Mutt < Formula
       args << "--disable-debug"
     end
 
-    system "./configure", *args
-    system "make install"
+    system "./prepare", *args
+    system "make"
+    system "make", "install"
   end
 end
-
