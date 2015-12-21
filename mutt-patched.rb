@@ -1,9 +1,9 @@
 require 'formula'
 
 class MuttPatched < Formula
-  url 'https://bitbucket.org/mutt/mutt/downloads/mutt-1.5.23.tar.gz'
+  url 'https://bitbucket.org/mutt/mutt/downloads/mutt-1.5.24.tar.gz'
   homepage 'http://www.mutt.org/'
-  sha1 '8ac821d8b1e25504a31bf5fda9c08d93a4acc862'
+  sha1 '38a2da5eb01ff83a90a2caee28fa2e95dbfe6898'
 
   option 'with-slang', 'Build against slang instead of ncurses'
 
@@ -16,18 +16,9 @@ class MuttPatched < Formula
 
   def patches
     [
-      'https://raw.github.com/djl/patches/master/mutt/ifdef.patch',
       'https://raw.github.com/djl/patches/master/mutt/trash-folder.patch',
       'https://raw.github.com/djl/patches/master/mutt/purge-message.patch',
       'https://raw.github.com/djl/patches/master/mutt/imap_fast_trash.patch',
-      'https://raw.github.com/djl/patches/master/mutt/sensible_browser_position.patch',
-      'https://raw.github.com/djl/patches/master/mutt/sidebar.patch',
-      'https://raw.github.com/djl/patches/master/mutt/sidebar-dotpathsep.patch',
-      'https://raw.github.com/djl/patches/master/mutt/sidebar-utf8.patch',
-      'https://raw.github.com/djl/patches/master/mutt/multiple-fcc.patch',
-      'https://raw.github.com/djl/patches/master/mutt/sidebar-newonly.patch',
-      'https://raw.github.com/djl/patches/master/mutt/sidebar-delimnullwide.patch',
-      'https://raw.github.com/djl/patches/master/mutt/sidebar-compose.patch',
     ]
   end
 
