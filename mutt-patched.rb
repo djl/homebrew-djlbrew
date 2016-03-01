@@ -14,12 +14,19 @@ class MuttPatched < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
 
-  def patches
-    [
-      'https://raw.github.com/djl/patches/master/mutt/trash-folder.patch',
-      'https://raw.github.com/djl/patches/master/mutt/purge-message.patch',
-      'https://raw.github.com/djl/patches/master/mutt/imap_fast_trash.patch',
-    ]
+  patch do
+    url "https://sources.debian.net/data/main/m/mutt/1.5.24-1/debian/patches/features/trash-folder.patch"
+    sha256 "34e318729b1829ea98c171c76de427b8f3ea6e85115639802cec81b4c2167cd0"
+  end
+
+  patch do
+    url "https://sources.debian.net/data/main/m/mutt/1.5.24-1/debian/patches/features/purge-message.patch"
+    sha256 "1b78d96bcc35f620c7e7bc8d1a93b2b24a05d63f90aab25ed1ce0d0f41b00aa6"
+  end
+
+  patch do
+    url "https://sources.debian.net/data/main/m/mutt/1.5.24-1/debian/patches/features/imap_fast_trash.patch"
+    sha256 "f5478b3dfcfe7bb8c43dfb9e74840fd7f740e9be7fc9ef62ea02e6c454d79f3d"
   end
 
   def install
