@@ -3,7 +3,7 @@ require 'formula'
 class MuttPatched < Formula
   url 'https://bitbucket.org/mutt/mutt/downloads/mutt-1.5.24.tar.gz'
   homepage 'http://www.mutt.org/'
-  sha1 '38a2da5eb01ff83a90a2caee28fa2e95dbfe6898'
+  sha256 'a292ca765ed7b19db4ac495938a3ef808a16193b7d623d65562bb8feb2b42200'
 
   option 'with-slang', 'Build against slang instead of ncurses'
 
