@@ -7,6 +7,7 @@ class MuttPatched < Formula
 
   option 'with-slang', 'Build against slang instead of ncurses'
 
+  depends_on "openssl"
   depends_on 'gpgme'
   depends_on 'tokyo-cabinet'
   depends_on 'slang' if build.include? 'with-slang'
@@ -33,7 +34,7 @@ class MuttPatched < Formula
     args = ["--disable-dependency-tracking",
             "--disable-warnings",
             "--prefix=#{prefix}",
-            "--with-ssl",
+            "--with-ssl=#{Formula["openssl"].opt_prefix}",
             "--with-sasl",
             "--with-gnutls",
             "--with-gss",
