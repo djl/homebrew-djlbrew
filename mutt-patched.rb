@@ -1,9 +1,9 @@
 require 'formula'
 
 class MuttPatched < Formula
-  url 'https://bitbucket.org/mutt/mutt/downloads/mutt-1.5.24.tar.gz'
+  url 'ftp://ftp.mutt.org/pub/mutt/mutt-1.6.1.tar.gz'
   homepage 'http://www.mutt.org/'
-  sha256 'a292ca765ed7b19db4ac495938a3ef808a16193b7d623d65562bb8feb2b42200'
+  sha256 '98b26cecc6b1713082fc880344fa345c20bd7ded6459abe18c84429c7cf8ed20'
 
   option 'with-slang', 'Build against slang instead of ncurses'
 
@@ -16,18 +16,8 @@ class MuttPatched < Formula
   depends_on "automake" => :build
 
   patch do
-    url "https://sources.debian.net/data/main/m/mutt/1.5.24-1/debian/patches/features/trash-folder.patch"
-    sha256 "34e318729b1829ea98c171c76de427b8f3ea6e85115639802cec81b4c2167cd0"
-  end
-
-  patch do
-    url "https://sources.debian.net/data/main/m/mutt/1.5.24-1/debian/patches/features/purge-message.patch"
-    sha256 "1b78d96bcc35f620c7e7bc8d1a93b2b24a05d63f90aab25ed1ce0d0f41b00aa6"
-  end
-
-  patch do
-    url "https://sources.debian.net/data/main/m/mutt/1.5.24-1/debian/patches/features/imap_fast_trash.patch"
-    sha256 "f5478b3dfcfe7bb8c43dfb9e74840fd7f740e9be7fc9ef62ea02e6c454d79f3d"
+    url "https://sources.debian.net/data/main/m/mutt/1.6.1-1/debian/patches/neomutt/14-trash.patch"
+    sha256 "cee13448c3cc291242182d06e12be211ec099353ebc42db77377b203c0bb88aa"
   end
 
   def install
