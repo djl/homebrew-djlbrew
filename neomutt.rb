@@ -1,9 +1,9 @@
 require 'formula'
 
 class Neomutt < Formula
-  url 'https://github.com/neomutt/neomutt/archive/neomutt-20160723.tar.gz'
+  url 'https://github.com/neomutt/neomutt/archive/neomutt-20160808.tar.gz'
   homepage 'http://www.neomutt.org/'
-  sha256 'd0eefe9e3b0e6b97f5a40bebb798ee5e19ce02e82f19dc6b67692d0ec73b0e0d'
+  sha256 'd357c50f019cb7ae56866d6edca37ac2664f681c75e0add41e07f385beee183e'
 
   option 'with-slang', 'Build against slang instead of ncurses'
 
